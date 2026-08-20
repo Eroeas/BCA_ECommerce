@@ -9,7 +9,7 @@
     <a href="index.php">Home<a/>
     <a href="about.php">About<a/>
     <a href="category.php">Categories<a/>
-    <a href="product.php">Products<a/>
+    <a href="products.php">Products<a/>
     <a href="contact.php">Contact<a/>
     <a href="register.php">Register<a/>
     <a href="login.php">Login<a/>

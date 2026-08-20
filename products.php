@@ -2,7 +2,7 @@
     require_once "header.php";
 ?>
 
-<h1> product</h1>
+<h1> Products</h1>
 
 <?php
     require_once "footer.php";
