@@ -2,7 +2,7 @@
     require_once "header.php";
 ?>
 
-<h1> Log in </h1>
+<h1> Category</h1>
 
 <?php
     require_once "footer.php";
