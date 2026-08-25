@@ -5,13 +5,13 @@
     if(!empty($_POST)){
       $name = $_POST['fullname'];
       $email = $_POST['email'];
-      $password =  $_POST['password'];
+      $password =  md5($_POST['password']);
       $gender = $_POST['gender'];
 
-      $hased_password = password_hash($password,PASSWORD_DEFAULT);
+     
 
       $sql = "INSERT INTO users(name,email,password,gender)
-              VALUES('$name','$email','$hased_password','$gender')";
+              VALUES('$name','$email','$password','$gender')";
               $result = mysqli_query($conn,$sql);
               if($result){
                 $_SESSION['success']="Account Created";

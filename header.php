@@ -13,14 +13,27 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="index.php">Home<a/>
-    <a href="about.php">About<a/>
-    <a href="category.php">Categories<a/>
-    <a href="products.php">Products<a/>
-    <a href="contact.php">Contact<a/>
-    <a href="register.php">Register<a/>
-    <a href="login.php">Login<a/>
+    <a href="index.php">Home</a>
+    <a href="about.php">About</a>
+    <a href="category.php">Categories</a>
+    <a href="products.php">Products</a>
+    <a href="contact.php">Contact</a>
+    <a href="register.php">Register</a>
+    <a href="login.php">Login</a>
+
+    <?php if (isset($_SESSION['auth'])){ ?>
+    <a>Welcome :<?php echo $_SESSION['auth']['name']; ?> </a>
+    <a href="logout.php">Log out</a>
+    <?php } else { ?>
+    <a href = "register.php">Register</a>
+    <a href = "login.php">Login</a>
+    <?php } ?>
+
+    
 <hr>
+
+
+
 <?php if (isset($_SESSION['success'])){?>
     <h1><?=$_SESSION ['success'];?> </h1>
     <?php unset ($_SESSION['success']); ?>
@@ -28,7 +41,5 @@
 
 <?php if (isset($_SESSION['error'])){?>
     <h1><?=$_SESSION ['error'];?> </h1>
-    <?php unset ($_SESSION['success']); ?>
+    <?php unset ($_SESSION['error']); ?>
 <?php } ?>
-
-    
