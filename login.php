@@ -1,7 +1,9 @@
 <?php
-    require_once "header.php";
+    
     require_once "connection.php";
-
+    if(session_status() === PHP_SESSION_NONE){
+      session_start();
+    }
     if(!empty($_POST)){
       
       $email = $_POST['email'];
@@ -13,15 +15,19 @@
 
       $sql = "SELECT * FROM users WHERE email='$email' AND  password='$password'";
               $result = mysqli_query($conn,$sql);
-              if(mysqli_num_rows($result)>0){
-                $_SESSION['success']="Login successful";
-                header("Location:index.php");
+            if(mysqli_num_rows($result) > 0){
+                $_SESSION['auth'] = true;
+                $_SESSION['success'] = "Login successful";
+                header("Location: addcategroy.php");
+                exit;
               }
               else{
-                $_SESSION['error']="Invalid credentials";
-                header("Location:login.php");
-              }
+                $_SESSION['error'] = "Invalid credentials";
+                header("Location: login.php");
+                exit;
+              }  
     }
+    require_once "header.php";
 ?>
 
 <h1> Log-in</h1>

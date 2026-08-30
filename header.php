@@ -1,5 +1,7 @@
 <?php
+    if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
     
 
 ?>
@@ -18,15 +20,18 @@
     <a href="category.php">Categories</a>
     <a href="products.php">Products</a>
     <a href="contact.php">Contact</a>
-    <a href="register.php">Register</a>
-    <a href="login.php">Login</a>
+    
+    
+
 
     <?php if (isset($_SESSION['auth'])){ ?>
-    <a>Welcome :<?php echo $_SESSION['auth']['name']; ?> </a>
+    <a>Welcome :<?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User'; ?> </a>
     <a href="logout.php">Log out</a>
+    <a href="addcategory.php">Add Category</a>
+    <a href="addproduct.php">Add Product</a>
     <?php } else { ?>
-    <a href = "register.php">Register</a>
-    <a href = "login.php">Login</a>
+    <a href="register.php">Register</a>
+    <a href="login.php">Login</a>
     <?php } ?>
 
     
