@@ -19,6 +19,7 @@
     <header>
         <nav>
             <ul>
+                <li><img src="image/images.png" class="logo" alt="logl" width="20px"></img></li> 
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="category.php">Categories</a></li>
@@ -32,6 +33,7 @@
         </nav>
     </header>
     <hr>
+
 
 
 
