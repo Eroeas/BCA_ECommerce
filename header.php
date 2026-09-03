@@ -2,10 +2,9 @@
     if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-    
-
 ?>
 
+<!-- html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,29 +12,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    <a href="index.php">Home</a>
-    <a href="about.php">About</a>
-    <a href="category.php">Categories</a>
-    <a href="products.php">Products</a>
-    <a href="contact.php">Contact</a>
-    
-    
-
-
-    <?php if (isset($_SESSION['auth'])){ ?>
-    <a>Welcome :<?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User'; ?> </a>
-    <a href="logout.php">Log out</a>
-    <a href="addcategory.php">Add Category</a>
-    <a href="addproduct.php">Add Product</a>
-    <?php } else { ?>
-    <a href="register.php">Register</a>
-    <a href="login.php">Login</a>
-    <?php } ?>
-
-    
-<hr>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="category.php">Categories</a></li>
+                <li><a href="products.php">Products</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="addcategroy.php">Add Category</a></li>
+                <li><a href="addproduct.php">Add Product</a></li>
+                <li><a href="register.php">Register</a></li>
+                <li><a href="login.php">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
 
 
 

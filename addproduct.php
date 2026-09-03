@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'header.php';
 require_once 'connection.php';
 
@@ -12,7 +13,7 @@ if(!empty($_POST)){
     $category_id = $_POST['category_id'];
     
     
-    $user_id = $_SESSION['user_id']; 
+    $user_id = $_SESSION['uid'] ?? $_SESSION['user_id'] ?? $_SESSION['user']['uid'] ?? 0;
     
     $title = $_POST['title'];
     
@@ -34,16 +35,16 @@ if(!empty($_POST)){
         if($result){
             $_SESSION['success'] = "Product added successfully";
             header("Location: addproduct.php");
-            exit; // CHANGED: Added exit; after header
+            exit; 
         } else {
             $_SESSION['error'] = "Product not added";
             header("Location: addproduct.php");
-            exit; // CHANGED: Added exit; after header
+            exit; 
         }
     } else {
         $_SESSION['error'] = "Image not uploaded";
         header("Location: addproduct.php");
-        exit; // CHANGED: Added exit; after header
+        exit; 
     }
 }
 
@@ -55,15 +56,15 @@ $category = mysqli_query($conn, $query);
 <form action="" method="post" enctype="multipart/form-data">
     Category: 
     <select name="category_id" required>
-        <option value="">---Select Category---</option>
-        <?php foreach($category as $cat){ ?>
-            <option value="<?php echo $cat['id']; // CHANGED: Changed 'cid' to 'id' to match standard column naming ?>">
-                <?php echo $cat['name']; ?>
-            </option>
-        <?php } ?>
-    </select> <br><br>
+    <option value="">---Select Category---</option>
+    <?php foreach($category as $cat){ ?>
+        <option value="<?php echo $cat['cid']; ?>">
+            <?php echo $cat['name']; ?>
+        </option>
+    <?php } ?>
+</select> <br><br>
 
-    <!-- CHANGED: Fixed typos 'requried' to 'required' and 'numbner' to 'number' -->
+    
     Title: <input type="text" name="title" required><br><br>
     Quantity: <input type="number" name="quantity" required><br><br>
     Price: <input type="number" name="price" required><br><br>
