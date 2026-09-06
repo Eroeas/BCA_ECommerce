@@ -32,7 +32,7 @@
             </ul>
         </nav>
     </header>
-    <hr>
+    <br>
 
 
 

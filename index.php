@@ -7,14 +7,26 @@
 ?>
 
     <section class="container"> 
-        <h1> Welcome to BCA Ecommerce page</h1><br><br>
+        <h1> Welcome to BCA Ecommerce page</h1>
         <h2>Product page</h2>
 
-        <?php foreach($result as $product) {  ?>
-                <h1><?php echo $product['title'] ?></h1>
-                <img src="image/<?php echo $product['image'] ?>" width="200" height="200" />
-                <a href = "products_details.php?slug=<?php echo $product['slug']?>"> View Product</a>
-        <?php } ?>
+        <div class="product-list">
+                <?php foreach($result as $product) {  ?>
+                <div class="product-box">
+                    <div class="product-image"><img src="image/<?php echo $product['image'] ?>" /></div>
+                    <div class="product-title"><h2><?php echo $product['title'] ?></h2></div>
+                    <div class="product-description"><p><?php echo $product['description']?></p></div>
+                    <div class="product-order"><a href = "products_details.php?slug=<?php echo $product['slug']?>"> Product Details</a></div>
+
+                    
+                    
+                </div>
+                <?php } ?>
+
+        </div>
+        
+
+
     </section>
 
 <?php
