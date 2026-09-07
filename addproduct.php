@@ -13,7 +13,7 @@ if(!empty($_POST)){
     $category_id = $_POST['category_id'];
     
     
-    $user_id = $_SESSION['uid'] ?? $_SESSION['user_id'] ?? $_SESSION['user']['uid'] ?? 0;
+    $user_id = $_SESSION['user_id'] ?? 0;
     
     $title = $_POST['title'];
     

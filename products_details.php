@@ -12,13 +12,22 @@
     $result  =mysqli_query($conn,$sql);
     $product =mysqli_fetch_assoc($result);
 ?>
-<h1>Product Details</h1>
-<h2><?php echo $product['title']?></h2>
-<img src="image/<?php echo $product['image']?>" width="200" height ="200" />
-<p><?php echo $product['description']?></p>
-<p>Category: <?php echo $product['category_name'] ?></p>
-<p>Vendor: <?php echo $product['vendor_name'] ?></p>
-<a href="">Order Now</a>
+<div class ="container">
+    <h1>Product Details</h1>
+    
+    <div class ="product_box">
+
+        <h2><?php echo $product['title']?></h2>
+        <div class="image_box">
+            <img  src="image/<?php echo $product['image']?>"  />
+
+        </div>        
+        <p><?php echo $product['description']?></p>
+        <p>Category: <?php echo $product['category_name'] ?></p>
+        <p>Vendor: <?php echo $product['vendor_name'] ?></p>
+        <a href="">Order Now</a>
+    </div>
+</div>
 
 <?php
     require_once "footer.php";

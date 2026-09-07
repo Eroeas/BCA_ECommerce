@@ -16,7 +16,9 @@
       $sql = "SELECT * FROM users WHERE email='$email' AND  password='$password'";
               $result = mysqli_query($conn,$sql);
             if(mysqli_num_rows($result) > 0){
+              $user = mysqli_fetch_assoc($result);
                 $_SESSION['auth'] = true;
+                $_SESSION['user_id']  = $user['uid'];
                 $_SESSION['success'] = "Login successful";
                 header("Location: addcategroy.php");
                 exit;

@@ -16,7 +16,7 @@
                     <div class="product-image"><img src="image/<?php echo $product['image'] ?>" /></div>
                     <div class="product-title"><h2><?php echo $product['title'] ?></h2></div>
                     <div class="product-description"><p><?php echo $product['description']?></p></div>
-                    <div class="product-order"><a href = "products_details.php?slug=<?php echo $product['slug']?>"> Product Details</a></div>
+                    <div class="product-order"><a class="btn-primary" href = "products_details.php?slug=<?php echo $product['slug']?>"> Product Details</a></div>
 
                     
                     

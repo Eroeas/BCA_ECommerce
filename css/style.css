@@ -4,6 +4,8 @@ body{
     box-sizing: border-box;
 }
 
+/* =======Main Menu========= */
+/* =======header.php========= */
 header{
 
     width: 100%;
@@ -40,6 +42,10 @@ nav ul li a{
     width: 80%;
     margin: 0 auto;
     
+
+/* =======Product page========= */
+/* =======index.php ======= */
+    
 }
 .product-list{
     display: grid;
@@ -62,4 +68,33 @@ nav ul li a{
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+}
+.btn-primary{
+    min-width: 150px;
+    padding: 10px 20px;
+    background: rgb(90, 179, 252);
+    color: rgb(216, 221, 224);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.footer{
+    width: 100%;
+    background: rgb(90, 179, 252);
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.product_box {
+    background: rgb(240, 247, 255);
+    width: 100%;
+    padding: 40px;
+}
+.product_box .image_box{
+    
+    text-align: center;
+    margin-bottom: 20px;
 }
